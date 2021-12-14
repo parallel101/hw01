@@ -1,2 +1,4 @@
 build
 GNUmakefile
+CMakeFiles
+CMakeCache.txt
