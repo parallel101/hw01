@@ -1,6 +1,6 @@
 # hw01
 
-第01讲的回家作业
+高性能并行编程与优化 - 第01讲的回家作业
 
 通过 pull request 提交作业。会批分数，但是：
 
@@ -35,7 +35,7 @@ stb_image_write.h 原仓库地址: https://github.com/nothings/stb
 你需要在一个且仅一个 .cpp 文件定义了 `STB_IMAGE_WRITE_IMPLEMENTATION` 这个宏，
 才能决定让 stbi 系列函数在这里实现。
 
-如果你能不仅完成了作业，解释清楚为什么 stbi 必须要这样设计，可能会给你满分！
+如果你不仅完成了作业，还能解释清楚为什么 stbi 必须要这样设计，可能会给你满分！
 
 ## 采分点提示
 
