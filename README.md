@@ -12,6 +12,9 @@
 
 作业提交时间不限 :) 即使完结了还想交的话我也会看的~ 不过最好在下一讲开播前完成。
 
+- 如何开 pull request：https://zhuanlan.zhihu.com/p/51199833
+- 如何设置 https 代理：https://www.jianshu.com/p/b481d2a42274
+
 ## 作业要求
 
 在 main.cpp 中为了导出两个"美好的图像"，使用了 `stb_image_write.h` 这个头文件。
