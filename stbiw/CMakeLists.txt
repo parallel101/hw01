@@ -1,6 +1,6 @@
 project(stbiw)
 
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 add_library(${PROJECT_NAME} STATIC
     stb_image_write.cpp
