@@ -63,10 +63,20 @@ CMake Error: CMake can not determine linker language for target: stbiw
 
 ---
 
-# 方法4
+## 方法4
 
+直接把 `方法1` 里的 `PUBLIC` 改成 `SHARED` 即可在 Ubuntu 中运行。`ldd` 检测到相应的动态库
 
-
+```bash
+$ ldd build/main
+        linux-vdso.so.1 (0x00007fffcf7a8000)
+        libstbiw.so => /mnt/d/parallel101/hw01/build/stbiw/libstbiw.so (0x00007fc3bb7ef000)
+        libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fc3bb600000)
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fc3bb5e0000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fc3bb3e0000)
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fc3bb291000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007fc3bb810000)
+```
 
 # 一些体会
 
