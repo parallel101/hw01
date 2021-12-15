@@ -52,8 +52,10 @@ CMake Error: CMake can not determine linker language for target: stbiw
 添加了 `project(stbiwLib LANGUAGES CXX)` 依然不行
 
 
+根据[这里](http://mariobadr.com/creating-a-header-only-library-with-cmake.html)，尝试了 `INTERFACE` , 遇到的问题是，此时没有办法定义 PRIVATE 的flag，所以这条路并没有走通。
 
 
+代码在 [`no_cpp`](https://github.com/RodenLuo/hw01/tree/no_cpp) 分支中
 
 
 # 一些体会
