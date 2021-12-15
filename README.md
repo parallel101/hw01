@@ -110,7 +110,9 @@ $env:PATH += ";build\stbiw\Debug"
 .\build\Debug\main.exe
 ```
 
-Warning 可能是说我在同一个文件中，即 export 了，又 import 了。
+Warning 可能是说我在同一个文件中，即 export 了，又 import 了。只在头文件的声明那里，添加 export 即可。且可成功编译和运行。也就是说，并不需要 “在使用该函数的地方声明则要改成 import [参考](https://github.com/parallel101/hw01/pull/3#pullrequestreview-831605662)”。代码在 [commit:cb0cae4](https://github.com/RodenLuo/hw01/commit/cb0cae419874c8e9b1d043f499edffdb1c4b8cb4)
+
+根据提示"PRIVATE 指定只给该库本身，而不给该库的 exe 的 flag；INTERFACE 可以指定只给链接该库的 exe，而不给库本身的 flag"。所以如果有这个需求的话，可以参照[这里](https://stackoverflow.com/questions/2592523/about-inconsistent-dll-linkage)定义一个宏，来解决这个问题。
 
 
 
