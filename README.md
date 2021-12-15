@@ -57,6 +57,16 @@ CMake Error: CMake can not determine linker language for target: stbiw
 
 代码在 [`no_cpp`](https://github.com/RodenLuo/hw01/tree/no_cpp) 分支中
 
+---
+
+静态库会把函数定义拷贝到主程序中，而当库中的函数会被多个程序使用时，可以使用动态库，在程序中只提供被调函数的入口，以及动态库的位置，而不拷贝整个程序。这样会节省硬盘（和内存？），但会让程序稍慢（找寻和调用函数需要时间）。下面提供动态库的方法
+
+---
+
+# 方法4
+
+
+
 
 # 一些体会
 
