@@ -86,10 +86,33 @@ LINK : fatal error LNK1104: cannot open file 'stbiw\Debug\stbiw.lib' [D:\paralle
 
 使用这里的[方法](https://github.com/parallel101/hw01/pull/2#discussion_r768381699)可以解决。如果使用了 `set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)` ，就并不需要 `__declspec(dllexport)` 了。
 
-但是此时，需要把 `build\stbiw\Debug\stbiw.dll` 拷贝到 `build\Debug` 里，或者指定运行时的环境到那个 dll 文件，才能运行 `main.exe`。
+但是此时，需要把 `build\stbiw\Debug\stbiw.dll` 拷贝到 `build\Debug` 里，或者添加那个 dll 文件所在文件夹到 PATH 环境变量中，才能运行 `main.exe`。
 
 
 代码在 [`dynamic-link`](https://github.com/RodenLuo/hw01/tree/dynamic-link) 分支中
+
+
+## 方法5
+
+同 方法4 ，但是使用 `__declspec(dllexport)` 和 `__declspec(dllimport)`。我在头文件的函数声明中，添加了import，在头文件的函数定义中，添加了export。代码在这个 [commit:f8c73f8](https://github.com/RodenLuo/hw01/commit/f8c73f883bdc8366f4171ed5e450f45a4eccecb3) 中。
+
+
+warning
+```bash
+D:\parallel101\hw01\stbiw\stb_image_write.h(1216,1): warning C4273: 'stbi_write_png': inconsistent dll linkage [D:\parallel101 
+\hw01\build\stbiw\stbiw.vcxproj]
+```
+
+但是可以运行
+
+```bash
+$env:PATH += ";build\stbiw\Debug"
+.\build\Debug\main.exe
+```
+
+Warning 可能是说我在同一个文件中，即 export 了，又 import 了。
+
+
 
 
 # 一些体会
