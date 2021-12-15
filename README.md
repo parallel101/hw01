@@ -32,6 +32,30 @@ target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
 
 代码在 [`solution2`](https://github.com/RodenLuo/hw01/tree/solution2) 分支中
 
+
+---
+
+需要新建一个 cpp 文件显得有点鸡肋，又探索了一下能不能不建立这个 cpp
+
+---
+
+## 方法3
+
+尝试了一下让库只依赖于头文件 `add_library(stbiw STATIC stb_image_write.h)`。
+
+此时报错 
+
+```bash
+CMake Error: CMake can not determine linker language for target: stbiw
+```
+
+添加了 `project(stbiwLib LANGUAGES CXX)` 依然不行
+
+
+
+
+
+
 # 一些体会
 
 ## `""` vs `<>`
