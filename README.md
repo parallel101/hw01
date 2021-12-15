@@ -8,6 +8,22 @@
 
 ## 方法2
 
+在库中创建一个 cpp ，只引入头文件，不打开开关。在 `CMakeLists.txt` 中，使用编译的flag。作业的说明中说了，不能使用下面这个。
+
+```cmake
+target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
+```
+
+是因为这个 PUBLIC 会把这个 flag 传播到链接了这个库的 `main` 上，而 `main` 的依赖项中有两个都引入了这个库的头文件，会导致重复定义。
+
+把 `PUBLIC` 改成 `PRIVATE` 即可。
+
+不可以用 `INTERFACE`，因为会传播出去从而导致重复定义。
+
+> INTERFACE 可以指定只给链接该库的 exe，而不给库本身的 flag。[来源](https://github.com/parallel101/hw01/pull/3#pullrequestreview-831605662)
+
+代码在 [`solution2`](https://github.com/RodenLuo/hw01/tree/solution2) 分支中
+
 # 一些体会
 
 一直没有太理解把引用头文件时的`""`改成`<>`到底是谁起了作用。实验了一下。如果只在根目录下`add_subdirectory(stbiw)`，而不`target_link_libraries(main PUBLIC stbiw)`，
