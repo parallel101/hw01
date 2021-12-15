@@ -78,6 +78,20 @@ $ ldd build/main
         /lib64/ld-linux-x86-64.so.2 (0x00007fc3bb810000)
 ```
 
+该方法在 Windows 下会报错
+
+```bash
+LINK : fatal error LNK1104: cannot open file 'stbiw\Debug\stbiw.lib' [D:\parallel101\hw01\build\main.vcxproj]
+```
+
+使用这里的[方法](https://github.com/parallel101/hw01/pull/2#discussion_r768381699)可以解决。如果使用了 `set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)` ，就并不需要 `__declspec(dllexport)` 了。
+
+但是此时，需要把 `build\stbiw\Debug\stbiw.dll` 拷贝到 `build\Debug` 里，或者指定运行时的环境到那个 dll 文件，才能运行 `main.exe`。
+
+
+代码在 [`dynamic-link`](https://github.com/RodenLuo/hw01/tree/dynamic-link) 分支中
+
+
 # 一些体会
 
 ## `""` vs `<>`
