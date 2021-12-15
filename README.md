@@ -1,3 +1,22 @@
+# 答案及解释
+
+问题的核心在于，`main.cpp` 中调用了 `mandel.cpp` 中的一个函数和 `rainbow.cpp` 中定义的一个函数，而这两个函数又调用了子文件夹 `stbiw` 里的头文件 `stb_image_write.h` 中定义的函数 `stbi_write_png(...)`。而 `stb_image_write.h` 为了方便用户使用，把所有内容都集成到了一个头文件，然后巧妙的用是否定义了 `STB_IMAGE_WRITE_IMPLEMENTATION` 宏 作为开关来分开头文件中所有的函数声明部分和函数定义部分。这个开关默认是关闭的。所以所有引用了该头文件的 cpp 都只获得了函数的声明，而没有函数的定义。所以解决方案的核心就在于，如何只让这些函数定义只被编译一次（因为如果被编译多次会出现函数重复定义的LNK错误），也就是如何只让 `STB_IMAGE_WRITE_IMPLEMENTATION` 这个开关被打开一次。
+
+当然可以在任意一个（且仅一个） cpp 中，也就是任意一个 translation unit 中 `#define STB_IMAGE_WRITE_IMPLEMENTATION`。但是这样就没有体现出来库的设计美学。
+
+## 方法1
+
+## 方法2
+
+# 一些体会
+
+一直没有太理解把引用头文件时的`""`改成`<>`到底是谁起了作用。实验了一下。如果只在根目录下`add_subdirectory(stbiw)`，而不`target_link_libraries(main PUBLIC stbiw)`，
+子目录下的`target_include_directories(stbiw PUBLIC .)`中的PUBLIC是没有传播到根目录下的target里面的。也就是说，`add_subdirectory(stbiw)`只是说去编译子文件中的内容，没有其他效果。
+
+`target_include_directories(stbiw PUBLIC .)`有两个作用，第一个是在编译当前这个 `stbiw` target的时候，把 `.` 作为了 `include_directories`，所以就可以在 `stbiw/stbiw.cpp` 中使用 `<>`；第二个是向外 PUBLIC 传播，所以通过 `target_link_libraries(main PUBLIC stbiw)` 这句话，`main` 这个target，就可以不仅链接到 `stbiw` 库，同时还感染了这个库的 PUBLIC 的 `include_directories`，所以在 `rainbow.cpp` 中，也可以使用 `<>` 来引用了。
+
+
+
 # 高性能并行编程与优化 - 第01讲的回家作业
 
 通过 pull request 提交作业。会批分数，但是：
