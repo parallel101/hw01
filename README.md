@@ -140,6 +140,10 @@ target_include_directories(stbiw PUBLIC .)
 STBIWDEF _DLL_EXPORT int stbi_write_png(...)
 ```
 
+上述逻辑是，放置一个开关 `_DLL_EXPORT` ，如果不是 Win , 这个开关就什么都不做。如果是 Win , 如果是在编译库，就设置成 export ，如果是在编译调用了这个库的其他 target ，就设置成 import。
+
+如前所述，删掉这行，`target_compile_definitions(stbiw INTERFACE -D_IMPORTCTRLS)` ，只在编译库的时候，启动 export 也是可以的。也很好理解，只要生成了 lib 文件，就可以进行链接了。并不理解为什么会有需要定义 import 的情况。
+
 代码在 [`dllexport`](https://github.com/RodenLuo/hw01/tree/dllexport) 分支中
 
 
