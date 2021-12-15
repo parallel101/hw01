@@ -1,3 +1,46 @@
+# 答案及解释
+
+问题的核心在于，`main.cpp` 中调用了 `mandel.cpp` 中的一个函数和 `rainbow.cpp` 中定义的一个函数，而这两个函数又调用了子文件夹 `stbiw` 里的头文件 `stb_image_write.h` 中定义的函数 `stbi_write_png(...)`。而 `stb_image_write.h` 为了方便用户使用，把所有内容都集成到了一个头文件，然后巧妙的用是否定义了 `STB_IMAGE_WRITE_IMPLEMENTATION` 宏 作为开关来分开头文件中所有的函数声明部分和函数定义部分。这个开关默认是关闭的。所以所有引用了该头文件的 cpp 都只获得了函数的声明，而没有函数的定义。所以解决方案的核心就在于，如何只让这些函数定义只被编译一次（因为如果被编译多次会出现函数重复定义的LNK错误），也就是如何只让 `STB_IMAGE_WRITE_IMPLEMENTATION` 这个开关被打开一次。
+
+当然可以在任意一个（且仅一个） cpp 中，也就是任意一个 translation unit 中 `#define STB_IMAGE_WRITE_IMPLEMENTATION`。但是这样就没有体现出来库的设计美学。
+
+## 方法1
+
+在 `stbiw` 子文件夹中创建一个 cpp，在里面打开开关之后，引用头文件。定义该子文件夹的编译规则为，由该 cpp 生成一个静态库，把当前文件夹作为 `include_directories` PUBLC 传播出去。
+
+## 方法2
+
+继承方法1，但是通过flag来打开开关。
+
+在库中创建一个 cpp ，只引入头文件，不打开开关。在 `CMakeLists.txt` 中，使用编译的flag。作业的说明中说了，不能使用下面这个。
+
+```cmake
+target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
+```
+
+是因为这个 PUBLIC 会把这个 flag 传播到链接了这个库的 `main` 上，而 `main` 的依赖项中有两个都引入了这个库的头文件，会导致重复定义。
+
+把 `PUBLIC` 改成 `PRIVATE` 即可。
+
+不可以用 `INTERFACE`，因为会传播出去从而导致重复定义。
+
+> INTERFACE 可以指定只给链接该库的 exe，而不给库本身的 flag。[来源](https://github.com/parallel101/hw01/pull/3#pullrequestreview-831605662)
+
+代码在 [`solution2`](https://github.com/RodenLuo/hw01/tree/solution2) 分支中
+
+# 一些体会
+
+## `""` vs `<>`
+一直没有太理解把引用头文件时的 `""` 改成 `<>` 到底是谁起了作用。实验了一下。如果只在根目录下`add_subdirectory(stbiw)`，而不`target_link_libraries(main PUBLIC stbiw)`，
+子目录下的`target_include_directories(stbiw PUBLIC .)`中的PUBLIC是没有传播到根目录下的target里面的。也就是说，`add_subdirectory(stbiw)`只是说去编译子文件中的内容，没有其他效果。
+
+`target_include_directories(stbiw PUBLIC .)`有两个作用，第一个是在编译当前这个 `stbiw` target的时候，把 `.` 作为了 `include_directories`，所以就可以在 `stbiw/stbiw.cpp` 中使用 `<>`；第二个是向外 PUBLIC 传播，所以通过 `target_link_libraries(main PUBLIC stbiw)` 这句话，`main` 这个target，就可以不仅链接到 `stbiw` 库，同时还感染了这个库的 PUBLIC 的 `include_directories`，所以在 `rainbow.cpp` 中，也可以使用 `<>` 来引用了。
+
+## 跨平台
+
+在 Windows 下编译之后，会生成 Visual Studio 的 .sln 文件。然而在 Ubuntu 下的 g++ 没有生成什么 IDE 的文件。 Mac 下的 AppleClang++ 居然也没有生成 Xcode 项目文件。空了再查查。
+
+
 # 高性能并行编程与优化 - 第01讲的回家作业
 
 通过 pull request 提交作业。会批分数，但是：
