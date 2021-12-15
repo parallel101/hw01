@@ -114,7 +114,33 @@ Warning 可能是说我在同一个文件中，即 export 了，又 import 了�
 
 根据提示"PRIVATE 指定只给该库本身，而不给该库的 exe 的 flag；INTERFACE 可以指定只给链接该库的 exe，而不给库本身的 flag"。所以如果有这个需求的话，可以参照[这里](https://stackoverflow.com/questions/2592523/about-inconsistent-dll-linkage)定义一个宏，来解决这个问题。
 
+```cmake
+add_library(stbiw SHARED stbiw.cpp)
 
+if (WIN32)
+    target_compile_definitions(stbiw PUBLIC -D_WIN_EXPORT)
+    target_compile_definitions(stbiw INTERFACE -D_IMPORTCTRLS)
+endif()
+
+target_include_directories(stbiw PUBLIC .)
+```
+
+```c++
+#ifdef _WIN_EXPORT
+#ifdef _IMPORTCTRLS 
+   #define _DLL_EXPORT __declspec(dllimport) 
+#else 
+   #define _DLL_EXPORT  __declspec(dllexport) 
+#endif 
+#else
+   #define _DLL_EXPORT
+#endif
+
+#ifndef STBI_WRITE_NO_STDIO
+STBIWDEF _DLL_EXPORT int stbi_write_png(...)
+```
+
+代码在 [`dllexport`](https://github.com/RodenLuo/hw01/tree/dllexport) 分支中
 
 
 # 一些体会
