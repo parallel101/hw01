@@ -7,5 +7,7 @@ endif()
 
 add_subdirectory(stbiw)
 
+##set_target_properties(stbiw PROPERTIES LINKER_LANGUAGE CXX)
+
 add_executable(main main.cpp rainbow.cpp mandel.cpp)
 target_link_libraries(main PUBLIC stbiw)
