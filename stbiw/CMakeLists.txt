@@ -3,6 +3,6 @@
 ##set_target_properties(${TARGET} PROPERTIES LINKER_LANGUAGE Cxx) 
 
 ##target_add_definitions(stbiw PUBLIC STBI_WRITE_NO_STDIO = 1)
-##add_library(stbiw STATIC stb_image_write.cpp)
-add_library(stbiw SHARED  stb_image_write.cpp)
+add_library(stbiw STATIC stb_image_write.cpp)
+##add_library(stbiw SHARED  stb_image_write.cpp)
 target_include_directories(stbiw PUBLIC .)
