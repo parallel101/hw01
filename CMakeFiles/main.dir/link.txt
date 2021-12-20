@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/rainbow.cpp.o CMakeFiles/main.dir/mandel.cpp.o  -o main  stbiw/libstbiw.a 

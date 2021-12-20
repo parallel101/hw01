@@ -1,0 +1,6 @@
+/home/liangqx/hw01/CMakeFiles/rebuild_cache.dir
+/home/liangqx/hw01/CMakeFiles/edit_cache.dir
+/home/liangqx/hw01/CMakeFiles/main.dir
+/home/liangqx/hw01/stbiw/CMakeFiles/rebuild_cache.dir
+/home/liangqx/hw01/stbiw/CMakeFiles/edit_cache.dir
+/home/liangqx/hw01/stbiw/CMakeFiles/stbiw.dir
