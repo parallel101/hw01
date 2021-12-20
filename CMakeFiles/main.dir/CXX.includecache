@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/liangqx/hw01/mandel.cpp
+mandel.h
+/home/liangqx/hw01/mandel.h
+stb_image_write.h
+-
+vector
+-
+complex
+-
+
+/home/liangqx/hw01/mandel.h
+
+stbiw/stb_image_write.h
+stdlib.h
+-
+stdio.h
+-
+stdarg.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+assert.h
+-
+

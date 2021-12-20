@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstbiw.a  CMakeFiles/stbiw.dir/stb_image_write.cpp.o
+/usr/bin/ranlib libstbiw.a
