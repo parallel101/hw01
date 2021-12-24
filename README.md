@@ -18,7 +18,7 @@
 
 ![Screenshot from 2021-12-24 15-17-14](https://user-images.githubusercontent.com/38579506/147328724-9f367bec-8705-4ccf-b331-413f0e6ebd9b.png)
 
-
+stb_image,需要写一个.cpp文件来“实现”的宏里面的东西,而非纯头文件,是需要一个文件来“实现”的。
 
 ## 作业要求
 
