@@ -12,6 +12,14 @@
 
 但是window里面还是要先开sln，然后区分在debug或者release模式下面运行exe文件才能有结果
 
+在stbiw.cpp里面有一个觉得比较奇怪的是 加<> 和 “”都可以比较顺利的实现
+
+但是在visual studio code里面加<>的话，下面有红线，但是“” 就不会有红线
+
+![Screenshot from 2021-12-24 15-17-14](https://user-images.githubusercontent.com/38579506/147328724-9f367bec-8705-4ccf-b331-413f0e6ebd9b.png)
+
+
+
 ## 作业要求
 
 在 main.cpp 中为了导出两个"美好的图像"，使用了 `stb_image_write.h` 这个头文件。
