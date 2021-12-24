@@ -3,8 +3,11 @@
 
 在homework1中，我用的是window来测试的。 
 
-打开在build目录中生成的hellocmake.sln，我分别用debug mode和release mode跑了一遍，最后出来了像这样的图片。
+打开在build目录中生成的hellocmake.sln，我分别用debug mode和release mode跑了一遍，最后出来了rainbow and mandel图片。
 
+`add_library`    生成必要的构建指令，将指定的源码编译到库中。 add_library 的第一个参数是目标名。整个 CMakeLists.txt 中，可使用相同的名称来引用库。生成的库的实际名称将由CMake通过在前面添加前缀lib和适当的扩展名作为后缀来形成。生成库是根据第二个参数( STATIC 或 SHARED )和操作系统确定的。
+`add_executable` 指示CMake创建一个新目标：可执行文件 hellocmake。这个可执行文件是通过编译和链接源文件 main.cpp 生成的。CMake将为编译器使用默认设置，并自动选择生成工具
+`target_include_directories` 将库链接到可执行文件。此命令还确保hellocmake可执行文件可以正确地依赖于消息库。因此，在消息库链接到hellocmake可执行文件之前，需要完成消息库的构建
 
 
 ## 作业要求
