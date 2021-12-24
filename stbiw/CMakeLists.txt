@@ -1,1 +1,4 @@
-message(FATAL_ERROR "请修改 stbiw/CMakeLists.txt！要求生成一个名为 stbiw 的库")
+project(stbiw)
+
+add_library(stbiw SHARED lib.cpp)
+target_include_directories(stbiw PUBLIC "${STBIW_INCLUDE_DIR}")
