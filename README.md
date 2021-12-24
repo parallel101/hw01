@@ -1,17 +1,24 @@
 # 高性能并行编程与优化 - 第01讲的回家作业
+## Debug心得体会
+`add_library`    生成必要的构建指令，将指定的源码编译到库中。 add_library 的第一个参数是目标名。整个 CMakeLists.txt 中，可使用相同的名称来引用库。生成的库的实际名称将由CMake通过在前面添加前缀lib和适当的扩展名作为后缀来形成。生成库是根据第二个参数( STATIC 或 SHARED )和操作系统确定的。
+`add_executable` 指示CMake创建一个新目标：可执行文件 hellocmake。这个可执行文件是通过编译和链接源文件 main.cpp 生成的。CMake将为编译器使用默认设置，并自动选择生成工具
+`target_include_directories` 将库链接到可执行文件。此命令还确保hellocmake可执行文件可以正确地依赖于消息库。因此，在消息库链接到hellocmake可执行文件之前，需要完成消息库的构建
 
-通过 pull request 提交作业。会批分数，但是：
+在homework1中，我用的是window来测试的。 
 
-没有结业证书，回家作业仅仅作为评估学习效果和巩固知识的手段，不必为分数感到紧张 :)
-量力而行，只要能在本课中，学到昨天的自己不懂的知识，就是胜利，没必要和别人攀比。
+打开在build目录中生成的hellocmake.sln，我分别用debug mode和release mode跑了一遍，最后出来了rainbow and mandel图片。
 
-- 课件：https://github.com/parallel101/course
-- 录播：https://space.bilibili.com/263032155
+相比之下，确实比较喜欢Linux。在Linux的系统下面，cmake.. 和make之后，直接运行./main就好了
 
-作业提交时间不限 :) 即使完结了还想交的话我也会看的~ 不过最好在下一讲开播前完成。
+但是window里面还是要先开sln，然后区分在debug或者release模式下面运行exe文件才能有结果
 
-- 如何开 pull request：https://zhuanlan.zhihu.com/p/51199833
-- 如何设置 https 代理：https://www.jianshu.com/p/b481d2a42274
+在stbiw.cpp里面有一个觉得比较奇怪的是 加<> 和 “”都可以比较顺利的实现
+
+但是在visual studio code里面加<>的话，下面有红线，但是“” 就不会有红线
+
+![Screenshot from 2021-12-24 15-17-14](https://user-images.githubusercontent.com/38579506/147328724-9f367bec-8705-4ccf-b331-413f0e6ebd9b.png)
+
+stb_image,需要写一个.cpp文件来“实现”的宏里面的东西,而非纯头文件,是需要一个文件来“实现”的。
 
 ## 作业要求
 
@@ -34,12 +41,3 @@ stb_image_write.h 原仓库地址: https://github.com/nothings/stb
 才能决定让 stbi 系列函数在这里实现。
 
 如果你不仅完成了作业，还能解释清楚为什么 stbi 必须要这样设计，可能会给你满分！
-
-## 采分点提示
-
-像这样：
-```cmake
-target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
-```
-是不行的，因为 mandel.cpp 和 rainbow.cpp 两个文件都 include 了 stb_image_write.h，
-这样同一个函数会被定义两遍！
