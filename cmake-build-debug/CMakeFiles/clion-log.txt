@@ -1,0 +1,15 @@
+"D:\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\Mloong\Documents\GitHub\hw01
+-- The CXX compiler identification is MSVC 19.29.30133.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Check for working CXX compiler: D:/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
+-- Check for working CXX compiler: D:/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe - works
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at stbiw/CMakeLists.txt:1 (message):
+  璇蜂慨鏀� stbiw/CMakeLists.txt锛佽姹傜敓鎴愪竴涓悕涓� stbiw 鐨勫簱
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/Mloong/Documents/GitHub/hw01/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/Mloong/Documents/GitHub/hw01/cmake-build-debug/CMakeFiles/CMakeError.log".

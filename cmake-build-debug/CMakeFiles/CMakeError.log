@@ -1,0 +1,14 @@
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: C:/Users/Mloong/Documents/GitHub/hw01/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_7ed77\fast && 	"D:\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_7ed77.dir\build.make /nologo -L                  CMakeFiles\cmTC_7ed77.dir\build
+Building CXX object CMakeFiles/cmTC_7ed77.dir/CMakeCXXCompilerABI.cpp.obj
+	"D:\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_7ed77.dir\CMakeCXXCompilerABI.cpp.obj.d --working-dir=C:\Users\Mloong\Documents\GitHub\hw01\cmake-build-debug\CMakeFiles\CMakeTmp --filter-prefix="" -- "D:\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\Mloong\AppData\Local\Temp\nm37AB.tmp
+NMAKE : fatal error U1077: “"D:\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe"”: 返回代码“0xc0000409”
+Stop.
+NMAKE : fatal error U1077: “"D:\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\nmake.exe"”: 返回代码“0x2”
+Stop.
+
+
+
+
