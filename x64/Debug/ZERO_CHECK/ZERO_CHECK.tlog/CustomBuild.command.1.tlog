@@ -1,0 +1,10 @@
+^D:\PROJECT\高性能并行编程与优化\HW01\CMAKEFILES\DA45E940790BD3767BD00A520785DAC6\GENERATE.STAMP.RULE
+setlocal
+D:\Program\CMake\bin\cmake.exe -SD:/Project/高性能并行编程与优化/hw01 -BD:/Project/高性能并行编程与优化/hw01 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Project/高性能并行编程与优化/hw01/hellocmake.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,64 @@
+The system is: Windows - 10.0.19043 - AMD64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+用于 .NET Framework 的 Microsoft (R) 生成引擎版本 17.1.0-preview-21526-01+a80e2274f
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2022/1/1 20:02:18。
+节点 1 上的项目“D:\Project\高性能并行编程与优化\hw01\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“Debug\”。
+  正在创建目录“Debug\CompilerIdCXX.tlog\”。
+InitializeBuildStatus:
+  正在创建“Debug\CompilerIdCXX.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+VcpkgTripletSelection:
+  Using triplet "x64-windows" from "D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\"
+ClCompile:
+  D:\Program\Visual\VC\Tools\MSVC\14.31.30818\bin\HostX64\x64\CL.exe /c /I"D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  D:\Program\Visual\VC\Tools\MSVC\14.31.30818\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\debug\lib" /LIBPATH:"D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\debug\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\debug\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> D:\Project\高性能并行编程与优化\hw01\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.exe
+AppLocalFromInstalled:
+  pwsh.exe -ExecutionPolicy Bypass -noprofile -File "D:\Project\C++\clone\microsoft\vcpkg\scripts\buildsystems\msbuild\applocal.ps1" "D:\Project\高性能并行编程与优化\hw01\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.exe" "D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\debug\bin" "Debug\CompilerIdCXX.tlog\CompilerIdCXX.write.1u.tlog" "Debug\vcpkg.applocal.log"
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=D:\Program\Visual\VC\Tools\MSVC\14.31.30818\bin\Hostx64\x64\cl.exe
+FinalizeBuildStatus:
+  正在删除文件“Debug\CompilerIdCXX.tlog\unsuccessfulbuild”。
+  正在对“Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\Project\高性能并行编程与优化\hw01\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:07.79
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "D:/Project/高性能并行编程与优化/hw01/CMakeFiles/3.21.3/CompilerIdCXX/CompilerIdCXX.exe"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/Project/高性能并行编程与优化/hw01/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program/Visual/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_d5dd7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && 用于 .NET Framework 的 Microsoft (R) 生成引擎版本 17.1.0-preview-21526-01+a80e2274f
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.31.30818 版
+  CMakeCXXCompilerABI.cpp
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  cl /c /I"D:\Project\C++\clone\microsoft\vcpkg\installed\\x64-windows\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d5dd7.dir\Debug\\" /Fd"cmTC_d5dd7.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\Program\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_d5dd7.vcxproj -> D:\Project\高性能并行编程与优化\hw01\CMakeFiles\CMakeTmp\Debug\cmTC_d5dd7.exe
+
+
+
