@@ -1,0 +1,4 @@
+D:/Project/高性能并行编程与优化/hw01/CMakeFiles/main.dir
+D:/Project/高性能并行编程与优化/hw01/CMakeFiles/ALL_BUILD.dir
+D:/Project/高性能并行编程与优化/hw01/CMakeFiles/ZERO_CHECK.dir
+D:/Project/高性能并行编程与优化/hw01/stbiw/CMakeFiles/stbiw.dir
