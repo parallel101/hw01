@@ -9,6 +9,6 @@ add_subdirectory(stbiw)
 
 add_executable(main main.cpp rainbow.cpp mandel.cpp)
 target_link_libraries(main PUBLIC stbiw)
-target_include_directories(main PUBLIC
-    "${PROJECT_SOURCE_DIR}/stbiw"
-)
+# target_include_directories(main PUBLIC
+#     "${PROJECT_SOURCE_DIR}/stbiw"
+# )
