@@ -6,6 +6,5 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_subdirectory(stbiw)
-
-add_executable(main main.cpp rainbow.cpp mandel.cpp)
+add_executable(main main.cpp pic/mandel.cpp pic/rainbow.cpp)
 target_link_libraries(main PUBLIC stbiw)

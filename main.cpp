@@ -1,5 +1,6 @@
-#include "rainbow.h"
-#include "mandel.h"
+#include "pic/rainbow.h"
+#include "pic/mandel.h"
+
 
 int main() {
     test_rainbow();
