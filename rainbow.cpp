@@ -1,5 +1,5 @@
 #include "rainbow.h"
-#include <stb_image_write.h>
+#include "generate_stb_images.h"
 #include <vector>
 
 void test_rainbow() {
@@ -11,5 +11,5 @@ void test_rainbow() {
             buf[(j * 512 + i) * 3 + 2] = 0;
         }
     }
-    stbi_write_png("rainbow.png", 512, 512, 3, buf.data(), 0);
+    call_stbi_write_png("rainbow.png", 512, 512, 3, buf.data(), 0);
 }
