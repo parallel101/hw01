@@ -1,5 +1,5 @@
 #include "mandel.h"
-#include "generate_stb_images.h"
+#include <stb_image_write.h>
 #include <vector>
 #include <complex>
 
@@ -20,5 +20,5 @@ void test_mandel() {
             }
         }
     }
-    call_stbi_write_png("mandel.png", 512, 512, 1, buf.data(), 0);
+    stbi_write_png("mandel.png", 512, 512, 1, buf.data(), 0);
 }
