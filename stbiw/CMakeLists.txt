@@ -1,1 +1,9 @@
-message(FATAL_ERROR "请修改 stbiw/CMakeLists.txt！要求生成一个名为 stbiw 的库")
+cmake_minimum_required(VERSION 3.12)
+project(stbiw CXX)
+
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+add_library(stbiw SHARED generate_stb_images.cpp)
+target_include_directories(stbiw PUBLIC .)
