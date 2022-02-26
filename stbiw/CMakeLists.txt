@@ -1,1 +1,3 @@
-message(FATAL_ERROR "请修改 stbiw/CMakeLists.txt！要求生成一个名为 stbiw 的库")
+add_library(stbiw STATIC stbiw.cc)
+target_compile_definitions(stbiw PRIVATE -DSTB_IMAGE_WRITE_IMPLEMENTATION)
+target_include_directories(stbiw PUBLIC .)
