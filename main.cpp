@@ -1,5 +1,6 @@
 #include "rainbow.h"
 #include "mandel.h"
+#include <stb_image_write.h>
 
 int main() {
     test_rainbow();
