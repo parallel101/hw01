@@ -1,2 +1,11 @@
 build
 GNUmakefile
+cmake-build-debug
+CMakeFiles
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+.gitignore
+.idea
+main
+stbiw/libstbiw.so
