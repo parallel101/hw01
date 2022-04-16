@@ -2,6 +2,7 @@
 #include <stb_image_write.h>
 #include <vector>
 
+
 void test_rainbow() {
     std::vector<char> buf(512 * 512 * 3);
     for (int j = 0; j < 512; j++) {
