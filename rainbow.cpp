@@ -1,4 +1,6 @@
 #include "rainbow.h"
+//但这样，mandel.cpp那边需要知道这边rainbow.cpp已定义，那边就不定义了，这样挺不符合直觉。。
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
 #include <vector>
 
