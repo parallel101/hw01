@@ -43,3 +43,7 @@ target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
 ```
 是不行的，因为 mandel.cpp 和 rainbow.cpp 两个文件都 include 了 stb_image_write.h，
 这样同一个函数会被定义两遍！
+
+
+
+wyh开始做作业了！
