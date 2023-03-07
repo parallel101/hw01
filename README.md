@@ -47,3 +47,32 @@ target_compile_definitions(stbiw PUBLIC -DSTB_IMAGE_WRITE_IMPLEMENTATION)
 
 
 2023/3/6
+
+提交pr的方式:
+
+```powershell
+# 先进行修改
+git push - a
+# 在文件内下面添加 Modified README.md
+git checkout -b [分支名]
+git push origin [分支名]
+# 打开remote中的网址 https://github.com/WangYuHang-cmd/xxx/pull/new/xxx
+```
+
+
+
+```cmake
+# add_library(stbiw STATIC stbiw)
+# target_include_directories(stbiw PUBLIC .)
+```
+
+
+
+我的方案:
+
+```cmake
+aux_source_directory(NEEDED DIR_STBIW) 
+add_library(stbiw STATIC ${DIR_STBIW})
+target_include_directories(stbiw PUBLIC .)
+```
+
