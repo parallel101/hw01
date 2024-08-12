@@ -148,6 +148,8 @@ LICENSE
 
 */
 
+#pragma once
+//添加此句来避免每次执行都编译，浪费性能
 #ifndef INCLUDE_STB_IMAGE_WRITE_H
 #define INCLUDE_STB_IMAGE_WRITE_H
 
