@@ -1,2 +1,4 @@
+tags
+.cache
 build
 GNUmakefile
