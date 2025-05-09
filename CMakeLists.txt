@@ -9,3 +9,4 @@ add_subdirectory(stbiw)
 
 add_executable(main main.cpp rainbow.cpp mandel.cpp)
 target_link_libraries(main PUBLIC stbiw)
+
